@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Cadastrar Doadores</title>
+
+</head>
+<body>
+    <img src="download.png" alt="logo" id="imagem">
+    <div id="header-container"></div>
+    <div id="cadastro-container"> 
+        <h2> Cadastrar Beneficiários</h2>
+        
+        <label for="nome"> Nome: </label>
+        <input type="text" id="nome"> 
+        <br>
+
+        <label for="contato"> Contato: </label>
+        <input type="text" id="contato">
+        <br>
+
+        <label for="doacao"> Tipo de Doação: </label>
+        <input type="text" id="doacao">
+        <br>
+
+        <button id="btnEnviar"> Cadastrar </button>
+    </div>
+     <script> 
+        async function carregarHeader() {
+            const response = await fetch('./../componentes/header.html');
+            const headerHTML = await response.text();
+            document.getElementById('header-container').innerHTML = headerHTML;
+        }
+        carregarHeader();
+    </script> 
+
+    <script type="module" src="./../js/cadastroBeneficiarios.js"></script>
+</body>
+</html>

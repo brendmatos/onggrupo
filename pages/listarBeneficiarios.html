@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../css/style.css">
+    <title>Listar Beneficiarios</title>
+
+</head>
+<body>
+     <img src="download.png" alt="logo" id="imagem">
+    <div id="header-container"></div>
+    <div id="listagem-container"> 
+        <h2> Listar Beneficiarios</h2>
+        <div id="listar-beneficiarios"> 
+            <p> Carregando Beneficiarios ...</p>
+        </div>
+    </div>
+
+    <div id="formulario-edicao" style="display: none;"> 
+        <h2> Editar Beneficiarios</h2>
+        <label for="editar-nome"> Nome: </label>
+        <input type="text" id="editar-nome"> 
+        <br> <br>
+        <label for="editar-contato"> Contato: </label>
+        <input type="number" id="editar-contato"> 
+        <br> <br>
+        <label for="editar-doacao"> doacao </label>
+        <input type="text" id="editar-doacao"> 
+        <br> <br>
+        <input type="hidden" id="editar-id">
+
+        <button id="btnSalvarEdicao"> Salvar Alterações </button>
+        <button id="btnCancelarEdicao"> Cancelar </button>
+    </div>
+     <script> 
+        async function carregarHeader() {
+            const response = await fetch('./../componentes/header.html');
+            const headerHTML = await response.text();
+            document.getElementById('header-container').innerHTML = headerHTML;
+        }
+        carregarHeader();
+    </script> 
+    <script  type="module" src="./../js/listarBeneficiarios.js"> </script> 
+</body>
+</html>
